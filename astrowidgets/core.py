@@ -324,18 +324,8 @@ class ImageWidget(ipyw.VBox):
 
         """
         return self._viewer.get_scale()
-
-    def zoom(self, val):
-        """
-        Zoom in or out by the given factor.
-
-        Parameters
-        ----------
-        val : int
-            The zoom level to zoom the image.
-            See `zoom_level`.
-
-        """
+    @zoom_level.setter
+    def zoom_level(self, val):
         self._viewer.scale_to(val, val)
 
     @property
